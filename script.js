@@ -15,3 +15,8 @@ var timerCount;
 var winCounter = 0;
 var loseCounter = 0;
 
+//set function to call previous score and initials
+function init() {
+    getPrevious();
+}
+
