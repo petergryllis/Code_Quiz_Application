@@ -9,7 +9,7 @@ var Question4 = "which variable is available to any other function in the global
 var Answer4 = ["var dog;", "function pet () { var dog...}", "function airplane () { var flightprofile...}"];
 
 //set variables for correct answer, timer and timer count
-var isCorrect = false;
+var isFinishedQuiz = true;
 var time;
 var timerCount;
 var winCounter = 0;
@@ -20,3 +20,12 @@ function init() {
     getPrevious();
 }
 
+//time function
+function startQuiz (){
+    isFinishedQuiz = true;
+    timerCount = 75;
+    //prevent start button from being clicked when round is in play
+    startbutton.disabled = true;
+    renderQuestions()
+    startTimer()
+}
