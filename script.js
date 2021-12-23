@@ -28,16 +28,11 @@ function init() {
 }
 
 //Set function to set timer and reduce timeCount if answer is wrong until clock  is zero
-var x = 60;
-var y = 15;
 rightAnswer1 = Answer1[2];
 rightAnswer2 = Answer2[2];
 rightAnswer3 = Answer3[1];
 rightAnswer4 = Answer4[0];
 
-Answer2 = false;
-Answer3 = false;
-Answer4 = false;
 
 function setTimer () {
     timer = setInterval(function () {
@@ -46,22 +41,39 @@ function setTimer () {
         if (timerCount >= 15) {
 
         }
-            if (Answer1 === false) {
-            timerCount = x - y;
-            timerCount.push(timerCount);
+            if (rightAnswer1 === false) {
+                timerCount = timerCount - 15;
+                timerCount.push(timerCount);
         }
-            if (Answer1 === true){
-            timerElement.textContent = timerCount;
+            if (rightAnswer1 === true){
+                timerElement.textContent = timerCount;
         }
-            if (Answer1 === false && Answer2 === )
+            if (rightAnswer2 === false) {
+                timerCount = timerCount - 15;
+                timerCount.push(timerCount);
+            }
+            if (rightAnswer2 === true) {
+                timerElement.textContent = timerCount;
+            }
+            if (rightAnswer3 === false) {
+                timerCount = timerCount - 15;
+                timerCount.push(timerCount);
+            }
+            if (rightAnswer3 === true) {
+                timerElement.textContent = timerCount;
+            }
+            if (rightAnswer4 === false) {
+                timerCount = timerCount - 15;
+                timerCount.push(timerCount);
+            }
+        //tests if time has run out 
+        if (timerCount === 0) {
+            clearInterval(timer);
+            GameFinished();
+        }
     }
-        
-     {
 
-     })
-
-
-}
+//Present questions on screen for user to choose answer
 
 
 
