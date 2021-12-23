@@ -30,7 +30,11 @@ function init() {
 //Set function to set timer and reduce timeCount if answer is wrong until clock  is zero
 var x = 60;
 var y = 15;
-Answer1 = false;
+rightAnswer1 = Answer1[2];
+rightAnswer2 = Answer2[2];
+rightAnswer3 = Answer3[1];
+rightAnswer4 = Answer4[0];
+
 Answer2 = false;
 Answer3 = false;
 Answer4 = false;
@@ -39,15 +43,17 @@ function setTimer () {
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
-        if (Answer1 === false && timerCount >= 15) {
+        if (timerCount >= 15) {
+
+        }
+            if (Answer1 === false) {
             timerCount = x - y;
-            timerCount.push(timer);
+            timerCount.push(timerCount);
         }
-        if (Answer1 === true && timerCount <= 15){
-            timerCount.push(timer);
-
-
+            if (Answer1 === true){
+            timerElement.textContent = timerCount;
         }
+            if (Answer1 === false && Answer2 === )
     }
         
      {
